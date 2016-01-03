@@ -1,0 +1,14 @@
+Source: githubissueinfo
+Maintainer: Taylor Raack <taylor@raack.info>
+Section: misc
+Priority: optional
+Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 9)
+Homepage: https://github.com/dinoboy197/githubissueinfo
+
+Package: githubissueinfo
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Attaches system info to GitHub issues
+ GitHub issue info collects system infomation (architecture, OS version, installed packages, etc) and attaches them to an issue previously filed in GitHub.
+
