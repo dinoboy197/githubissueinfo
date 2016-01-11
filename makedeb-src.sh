@@ -11,6 +11,10 @@ PKGVER=$1
 TMP=$(mktemp -d)
 CURRENT=$(pwd)
 
+git stash
+
+git checkout $PKGVER
+
 for release in ${RELEASES}; do
 	echo ""
 	echo "${PKGNAME} ${PKGVER} ${release}"
@@ -24,8 +28,12 @@ for release in ${RELEASES}; do
 	sed -e "s/githubissueinfo (.*)/githubissueinfo (${PKGVER}~${release})/g" -e "s/unstable;/${release};/g" -i debian/changelog
 
 	debuild -i -S
+	
+	dput ppa:track16/ppa githubissue*${release}_source.changes
 done
 
-cp ${TMP}/*.build ${TMP}/*.changes ${TMP}/*.dsc ${TMP}/*.tar.gz ${CURRENT}
 rm -rf ${TMP}
 
+git checkout master
+
+git stash pop
