@@ -1,3 +1,9 @@
+githubissueinfo (0.2.x-1ubuntu1) UNRELEASED; urgency=medium
+
+  * 
+
+ -- Taylor Raack <taylor@raack.info>  Sun, 10 Jan 2016 21:46:44 -0800
+
 githubissueinfo (0.1.x-1) unstable; urgency=low
 
   * Initial release.
