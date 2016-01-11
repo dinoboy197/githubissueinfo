@@ -1,8 +1,8 @@
-githubissueinfo (0.2.x-1ubuntu1) UNRELEASED; urgency=medium
+githubissueinfo (0.2.0-1ubuntu1) unstable; urgency=medium
 
   * Update packaging documentation
 
- -- Taylor Raack <taylor@raack.info>  Sun, 10 Jan 2016 21:46:44 -0800
+ -- Taylor Raack <taylor@raack.info>  Sun, 10 Jan 2016 22:19:40 -0800
 
 githubissueinfo (0.1.x-1) unstable; urgency=low
 
