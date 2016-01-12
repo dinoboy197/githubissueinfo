@@ -24,15 +24,17 @@ for release in ${RELEASES}; do
 	cp -aR ${CURRENT}/* ${DST}
 	cd ${DST}
 
-	#debian: changelog
+        #debian: changelog
 	sed -e "s/githubissueinfo (.*)/githubissueinfo (${PKGVER}~${release})/g" -e "s/unstable;/${release};/g" -i debian/changelog
 
 	debuild -i -S
-	
-	dput ppa:track16/ppa githubissue*${release}_source.changes
+
+	dput ppa:track16/ppa ${TMP}/githubissue*${release}_source.changes
 done
 
 rm -rf ${TMP}
+
+cd ${CURRENT}
 
 git checkout master
 
