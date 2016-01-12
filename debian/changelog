@@ -1,6 +1,6 @@
 githubissueinfo (0.3.x) UNRELEASED; urgency=medium
 
-  * Future changes 
+  * Added actual GitHub authentication and test comment on issue posting 
 
  -- Taylor Raack <taylor@raack.info>  Sun, 10 Jan 2016 22:20:38 -0800
 

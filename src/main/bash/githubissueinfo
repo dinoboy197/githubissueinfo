@@ -1,4 +1,19 @@
 #!/usr/bin/env bash
 
-echo "GitHub Issue Info!"
+if [ ! -f ~/.github_credentials ]; then
+  read -p "Please enter your GitHub username (this will be saved so that you do not need to enter it again later): " username
+  read -s -p "Please enter your GitHub password (this will also be saved and will not be shown onscreen): " password
+  echo ""
+  echo "$username $password" > ~/.github_credentials
+else
+  read username password <<<$(cat ~/.github_credentials)
+fi
+
+read -p "Please enter the full issue HTTPS URL to add system information: " issue_url
+
+api_url=`echo "$issue_url" | sed "s/\/github.com/\/api.github.com\/repos/" | sed "s/http:/https:/"`
+
+full_url="$api_url/comments"
+
+curl -XPOST -u $username:$password $full_url -d '{"body":"test comment"}'
 
