@@ -1,3 +1,9 @@
+githubissueinfo (0.4.x-1ubuntu1) UNRELEASED; urgency=medium
+
+  * First comment 
+
+ -- Taylor Raack <taylor@raack.info>  Mon, 11 Jan 2016 21:30:58 -0800
+
 githubissueinfo (0.3.0-1ubuntu1) unstable; urgency=medium
 
   * Added actual GitHub authentication and test comment on issue posting 
